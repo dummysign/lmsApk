@@ -60,3 +60,4 @@ flutter:
 
   assets:
     - assets/image/books.png
+    - assets/image/bg.png

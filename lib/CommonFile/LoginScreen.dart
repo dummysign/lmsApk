@@ -7,7 +7,17 @@ class LoginScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          image : DecorationImage(
+              image:AssetImage('assets/image/books.png'),
+            fit: BoxFit.cover
+          ),
+        ),
 
+      ),
     );
   }
 
