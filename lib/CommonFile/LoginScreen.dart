@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget{
         width: double.infinity,
         decoration: BoxDecoration(
           image : DecorationImage(
-              image:AssetImage('assets/image/books.png'),
+              image:AssetImage('assets/image/bg.png'),
             fit: BoxFit.cover
           ),
         ),
