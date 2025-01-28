@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner : false,
       //  builder: EasyLoading.init(),
-        home: SplashScreen()// Set SplashScreen as the initial home
+        home: SplashScreen()
     );
   }
 }

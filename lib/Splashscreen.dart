@@ -20,7 +20,7 @@ class _SplashScreenState extends  State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 3),(){
       Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => LoginScreen()),
       );
     });
   }
@@ -32,7 +32,7 @@ class _SplashScreenState extends  State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/image/maco_img.png', width: 300),
+            Image.asset('assets/image/books.png', width: 100),
             SizedBox(height: 20),
           ],
         ),
