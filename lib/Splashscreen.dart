@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lmsapp/CommonFile/LoginScreen.dart';
+import 'package:lmsapp/View/LoginScreen.dart';
 import 'package:lmsapp/HomePage.dart';
 
 class SplashScreen extends StatefulWidget{
@@ -33,7 +33,7 @@ class _SplashScreenState extends  State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/image/bg.png', width: 100),
+            Image.asset('assets/image/books.png', width: 100),
             SizedBox(height: 20),
           ],
         ),

@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:lmsapp/Controller/LoginController.dart';
 import 'package:lmsapp/Splashscreen.dart';
+import 'package:lmsapp/View/ForgotPasswordScreen.dart';
+import 'package:lmsapp/View/SignUpScreen.dart';
+import 'package:provider/provider.dart';
+
+
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 void main() {
   runApp(MyApp(),
@@ -15,15 +22,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-          useMaterial3: true,
-        ),
-        debugShowCheckedModeBanner : false,
-      //  builder: EasyLoading.init(),
-        home: SplashScreen()
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => LoginController()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        navigatorKey: navigatorKey,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => SplashScreen(),
+          '/forgotPassword': (context) => ForgotPasswordScreen(),
+          '/signUp': (context) => SignUpScreen(),
+        },
+      ),
     );
   }
 }
