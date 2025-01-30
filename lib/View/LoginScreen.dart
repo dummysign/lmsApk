@@ -66,7 +66,15 @@ class LoginScreen extends StatelessWidget {
                               fillColor: Colors.grey[200],
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide.none
+                                  borderSide:BorderSide(color: Colors.grey, width: 1)
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(color: Colors.grey, width: 1), // Default border
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(color: Colors.grey, width: 2), // Border when focused
                               ),
                               contentPadding: EdgeInsets.symmetric(
                                 horizontal: 10,
@@ -90,7 +98,15 @@ class LoginScreen extends StatelessWidget {
                               fillColor: Colors.grey[200],
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide.none
+                                  borderSide:BorderSide(color: Colors.grey, width: 1)
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(color: Colors.grey, width: 1), // Default border
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(color: Colors.grey, width: 2), // Border when focused
                               ),
                               contentPadding: EdgeInsets.symmetric(
                                 horizontal: 10,
