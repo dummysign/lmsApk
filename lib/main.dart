@@ -5,6 +5,8 @@ import 'package:lmsapp/View/ForgotPasswordScreen.dart';
 import 'package:lmsapp/View/SignUpScreen.dart';
 import 'package:provider/provider.dart';
 
+import 'Controller/SingupController.dart';
+
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => LoginController()),
+        ChangeNotifierProvider(create: (_) => SingupController()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
