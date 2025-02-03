@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../Model/CountryResponse.dart';
+import '../Model/RegisterResponse.dart';
 import '../Model/StateResponse.dart';
 import '../Model/countrymodel.dart';
 part 'ApiService.g.dart';
@@ -16,5 +17,8 @@ abstract class ApiService {
 
   @GET("states")
   Future<StateResponse> getstate( @Query('countryId') int countryId);
+
+  @POST('signup')
+  Future<RegisterResponse> signup(@Body() Map<String, dynamic> body);
 
 }
