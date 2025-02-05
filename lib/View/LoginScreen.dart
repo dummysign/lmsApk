@@ -60,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                           TextField(
-                           // controller: loginScreenViewModel.nameController,
+                            controller: loginScreenViewModel.nameController,
                             decoration: InputDecoration(
                               filled: true,
                               fillColor: Colors.grey[200],
@@ -91,7 +91,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                           TextField(
-                         //   controller: loginScreenViewModel.passController,
+                            controller: loginScreenViewModel.passController,
                             obscureText:true,
                             decoration: InputDecoration(
                               filled: true,
@@ -117,7 +117,7 @@ class LoginScreen extends StatelessWidget {
                           SizedBox(height: 40),
                           ElevatedButton(
                             onPressed: (){
-                            //  loginScreenViewModel.login(context,loginScreenViewModel.nameController.text,loginScreenViewModel.passController.text);
+                              loginScreenViewModel.Login();
                             },
                             style: ElevatedButton.styleFrom(
                               padding: EdgeInsets.symmetric(vertical: 12),

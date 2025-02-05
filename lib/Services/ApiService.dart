@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../Model/BookListResponse.dart';
 import '../Model/CountryResponse.dart';
+import '../Model/LoginResponse.dart';
 import '../Model/RegisterResponse.dart';
 import '../Model/StateResponse.dart';
 import '../Model/countrymodel.dart';
@@ -20,5 +22,12 @@ abstract class ApiService {
 
   @POST('signup')
   Future<RegisterResponse> signup(@Body() Map<String, dynamic> body);
+
+
+  @POST('Login')
+  Future<LoginResponse> Login(@Body() Map<String, dynamic> body);
+
+  @GET('BookList')
+  Future<BookListResponse> BookList();
 
 }

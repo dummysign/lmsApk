@@ -77,3 +77,6 @@ flutter:
   assets:
     - assets/image/books.png
     - assets/image/bg.png
+    - assets/image/library.png
+    - assets/image/monitor.png
+    - assets/image/book.png

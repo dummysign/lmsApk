@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:lmsapp/Controller/LoginController.dart';
-import 'package:lmsapp/Splashscreen.dart';
+import 'package:lmsapp/View/Splashscreen.dart';
 import 'package:lmsapp/View/ForgotPasswordScreen.dart';
 import 'package:lmsapp/View/SignUpScreen.dart';
 import 'package:provider/provider.dart';
 
+import 'Controller/BookListController.dart';
+import 'Controller/HomePageController.dart';
 import 'Controller/SingupController.dart';
+import 'View/BookList.dart';
+import 'View/HomePage.dart';
 
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -28,6 +32,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => LoginController()),
         ChangeNotifierProvider(create: (_) => SingupController()),
+        ChangeNotifierProvider(create: (_) => BookListController()),
+        ChangeNotifierProvider(create: (_) => HomePageController()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -37,6 +43,8 @@ class MyApp extends StatelessWidget {
           '/': (context) => SplashScreen(),
           '/forgotPassword': (context) => ForgotPasswordScreen(),
           '/signUp': (context) => SignUpScreen(),
+          '/home': (context) => HomePage(),
+          '/BooKList': (context) => BookList(),
         },
       ),
     );

@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lmsapp/View/LoginScreen.dart';
-import 'package:lmsapp/HomePage.dart';
+import 'package:lmsapp/View/HomePage.dart';
 
 class SplashScreen extends StatefulWidget{
   @override
