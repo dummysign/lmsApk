@@ -3,6 +3,7 @@ import 'package:retrofit/retrofit.dart';
 
 import '../Model/BookListResponse.dart';
 import '../Model/CountryResponse.dart';
+import '../Model/IssueResponse.dart';
 import '../Model/LoginResponse.dart';
 import '../Model/RegisterResponse.dart';
 import '../Model/StateResponse.dart';
@@ -29,5 +30,10 @@ abstract class ApiService {
 
   @GET('BookList')
   Future<BookListResponse> BookList();
+
+
+  @POST('RequestIssue')
+  Future<IssueResponse> RequestIssue(@Body() Map<String, dynamic> body);
+
 }
 

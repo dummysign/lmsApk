@@ -43,6 +43,7 @@ dependencies:
   json_serializable: ^6.7.1
   fluttertoast: ^8.2.10
   intl: ^0.20.2
+  shared_preferences: ^2.5.1
 
 dev_dependencies:
   flutter_test:

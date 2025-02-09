@@ -7,14 +7,18 @@ import 'package:provider/provider.dart';
 
 import 'Controller/BookListController.dart';
 import 'Controller/HomePageController.dart';
+import 'Controller/IssueController.dart';
 import 'Controller/SingupController.dart';
+import 'Utils/UserPreferences.dart';
 import 'View/BookList.dart';
 import 'View/HomePage.dart';
 
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await UserPreferences.init();
   runApp(MyApp(),
    /* ChangeNotifierProvider(
       create: (context) => AppState(),
@@ -34,6 +38,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => SingupController()),
         ChangeNotifierProvider(create: (_) => BookListController()),
         ChangeNotifierProvider(create: (_) => HomePageController()),
+        ChangeNotifierProvider(create: (_) => IssueController()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

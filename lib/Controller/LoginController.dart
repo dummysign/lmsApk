@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 import '../Model/LoginResponse.dart';
 import '../Services/ApiClient.dart';
+import '../Utils/UserPreferences.dart';
 import '../main.dart';
 
 class LoginController extends ChangeNotifier{
@@ -68,6 +69,15 @@ class LoginController extends ChangeNotifier{
           textColor: Colors.white,
           fontSize: 16.0,
         );
+        await UserPreferences().saveUserData(
+            response.data?.memberId ?? 0,
+            response.data?.fullName ?? '',
+            response.data?.email ?? '',
+            response.data?.contactNo ?? '',
+            response.data?.dob ?? '',
+            response.data?.accountStatus ?? ''
+        );
+
         navigatorKey.currentState?.pushReplacementNamed('/home');
 
      //   notifyListeners();
@@ -82,6 +92,14 @@ class LoginController extends ChangeNotifier{
         );
       }
     } catch (e) {
+      Fluttertoast.showToast(
+        msg: "Error: $e",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        backgroundColor: Colors.black,
+        textColor: Colors.white,
+        fontSize: 16.0,
+      );
       debugPrint('Error fetching data: $e');
     }
   }

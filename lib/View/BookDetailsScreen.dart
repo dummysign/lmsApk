@@ -2,6 +2,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lmsapp/Model/BookModel.dart';
+import 'package:provider/provider.dart';
+
+import '../Controller/IssueController.dart';
 
 class BookDetailsScreen extends StatelessWidget{
 
@@ -11,6 +14,8 @@ class BookDetailsScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    final countryProvider =
+    Provider.of<IssueController>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         title: Text(book.bname),
@@ -91,6 +96,7 @@ class BookDetailsScreen extends StatelessWidget{
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                  countryProvider.IssueRequest(book);
                 },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(vertical: 15),
