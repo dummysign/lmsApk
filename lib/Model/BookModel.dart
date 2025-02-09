@@ -27,6 +27,13 @@ class BookModel {
   @JsonKey(name :'publisherid', defaultValue: '')
   final String publisherid;
 
+
+  @JsonKey(name :'publisherName', defaultValue: '')
+  final String publisherName;
+
+  @JsonKey(name :'authName', defaultValue: '')
+  final String authName;
+
   @JsonKey(name :'authid', defaultValue: '')
   final String authid;
 
@@ -42,6 +49,9 @@ class BookModel {
   @JsonKey(name :'generId', defaultValue: '')
   final String generId;
 
+  @JsonKey(name :'bookImage', defaultValue: '')
+  final String bookImage;
+
   BookModel({
     required this.bid,
     required this.bname,
@@ -54,6 +64,9 @@ class BookModel {
     required this.langid,
     required this.noPage,
     required this.generId,
+    required this.bookImage,
+    required this.authName,
+    required this.publisherName,
   });
 
   factory BookModel.fromJson(Map<String, dynamic> json) => _$BookModelFromJson(json);

@@ -24,8 +24,8 @@ class BookDetailsScreen extends StatelessWidget{
             Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: Image.asset(
-                  'assets/image/book.png', // Static image
+                child: Image.network(
+                  "http://192.168.213.209/lmswebapp/"+book.bookImage, // Static image
                   width: 120,
                   height: 160,
                   fit: BoxFit.cover,
@@ -38,21 +38,69 @@ class BookDetailsScreen extends StatelessWidget{
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
             SizedBox(height: 10),
-            Text("Author: ${book.authid}",
-                style: TextStyle(fontSize: 16, color: Colors.grey[700])),
+            SizedBox(
+              height: 40,
+              child: Row(
+                children: [
+                  Text("Author:",
+                      style: TextStyle(fontSize: 20, color: Colors.black)),
+                  SizedBox(width: 32),
+                  Text(book.authName,
+                      style: TextStyle(fontSize: 20, color: Colors.blue[700])),
+                ],
+              ),
+            ),
             SizedBox(height: 5),
-            Text("Publisher: ${book.publisherid}",
-                style: TextStyle(fontSize: 16, color: Colors.grey[700])),
-            SizedBox(height: 20),
+            SizedBox(
+              height: 40,
+              child: Row(
+                children: [
+                  Text("Publisher:",
+                      style: TextStyle(fontSize: 20, color: Colors.black)),
+                  SizedBox(width: 18),
+                  Text(book.publisherName,
+                      style: TextStyle(fontSize: 20, color: Colors.blue[700])),
+                ],
+              ),
+            ),
+            SizedBox(height: 0),
+            SizedBox(
+              height: 40,
+              child: Row(
+                children: [
+                  Text("Gener:",
+                      style: TextStyle(fontSize: 20, color: Colors.black)),
+                  SizedBox(width: 40),
+                  Text(book.generId,
+                      style: TextStyle(fontSize: 20, color: Colors.blue[700])),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
             Text(
               "Description:",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 5),
             Text(
-              book.generId ??
                   "No description available.", // Add description field in Book model
               style: TextStyle(fontSize: 14, color: Colors.black87),
+            ),
+            Spacer(),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  backgroundColor: Colors.blue[400],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                child: Text("Request Issue", style: TextStyle(fontSize: 18,color: Colors.white)),
+              ),
             ),
           ],
         ),

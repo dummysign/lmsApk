@@ -53,8 +53,7 @@ class BookItem extends StatelessWidget{
         child: ListTile(
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              'assets/image/book.png', // Book image from API
+            child: Image.network("http://192.168.213.209/lmswebapp/"+book.bookImage, // Book image from API
               width: 60,
               height: 80,
               fit: BoxFit.cover,
@@ -69,9 +68,9 @@ class BookItem extends StatelessWidget{
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Author: ${book.authid}",
+              Text("Author: ${book.authName}",
                   style: TextStyle(fontSize: 14, color: Colors.grey[700])),
-              Text("Publisher: ${book.publisherid}",
+              Text("Publisher: ${book.publisherName}",
                   style: TextStyle(fontSize: 14, color: Colors.grey[700])),
             ],
           ),

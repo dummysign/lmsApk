@@ -9,7 +9,7 @@ import '../Model/StateResponse.dart';
 import '../Model/countrymodel.dart';
 part 'ApiService.g.dart';
 
-@RestApi(baseUrl: "http://192.168.238.209/LMSAPI2/api/Student/")
+@RestApi(baseUrl: "http://192.168.213.209/LMSAPI2/api/Student/")
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
@@ -18,7 +18,7 @@ abstract class ApiService {
   Future<CountryResponse> getcountries();
 
   @GET("states")
-  Future<StateResponse> getstate( @Query('countryId') int countryId);
+  Future<StateResponse> getstate(@Query('countryId') int countryId);
 
   @POST('signup')
   Future<RegisterResponse> signup(@Body() Map<String, dynamic> body);
@@ -29,5 +29,5 @@ abstract class ApiService {
 
   @GET('BookList')
   Future<BookListResponse> BookList();
-
 }
+
