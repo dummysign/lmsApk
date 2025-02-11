@@ -57,29 +57,34 @@ class HomePage extends StatelessWidget {
                     ),
                     SizedBox(width: 10),
                     Expanded(
-                      child: Material(
-                        elevation: 10,
-                        shadowColor: Colors.grey,
-                        borderRadius: BorderRadius.circular(20),
-                        child: Container(
-                          padding: EdgeInsets.symmetric(vertical: 30),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                          ),
-                          child: Column(
-                            children: [
-                              Text(
-                                'Request List',
-                                style: TextStyle(
-                                    fontSize: 18, color: Colors.black),
-                              ),
-                              Image.asset(
-                                "assets/image/monitor.png",
-                                width: 50,
-                                height: 50,
-                              )
-                            ],
+                      child: GestureDetector(
+                        onTap: (){
+                          Provider.of<HomePageController>(context, listen: false).onOpenReList();
+                        },
+                        child: Material(
+                          elevation: 10,
+                          shadowColor: Colors.grey,
+                          borderRadius: BorderRadius.circular(20),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 30),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white,
+                            ),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Request List',
+                                  style: TextStyle(
+                                      fontSize: 18, color: Colors.black),
+                                ),
+                                Image.asset(
+                                  "assets/image/monitor.png",
+                                  width: 50,
+                                  height: 50,
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),

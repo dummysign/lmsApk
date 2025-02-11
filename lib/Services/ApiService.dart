@@ -6,6 +6,7 @@ import '../Model/CountryResponse.dart';
 import '../Model/IssueResponse.dart';
 import '../Model/LoginResponse.dart';
 import '../Model/RegisterResponse.dart';
+import '../Model/RequestListResponse.dart';
 import '../Model/StateResponse.dart';
 import '../Model/countrymodel.dart';
 part 'ApiService.g.dart';
@@ -34,6 +35,9 @@ abstract class ApiService {
 
   @POST('RequestIssue')
   Future<IssueResponse> RequestIssue(@Body() Map<String, dynamic> body);
+
+  @GET("IssueStatus")
+  Future<RequestListResponse> IssueStatus(@Query('memberid') String countryId);
 
 }
 

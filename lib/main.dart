@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmsapp/Controller/LoginController.dart';
+import 'package:lmsapp/View/Requestist.dart';
 import 'package:lmsapp/View/Splashscreen.dart';
 import 'package:lmsapp/View/ForgotPasswordScreen.dart';
 import 'package:lmsapp/View/SignUpScreen.dart';
@@ -8,6 +9,7 @@ import 'package:provider/provider.dart';
 import 'Controller/BookListController.dart';
 import 'Controller/HomePageController.dart';
 import 'Controller/IssueController.dart';
+import 'Controller/RequestListController.dart';
 import 'Controller/SingupController.dart';
 import 'Utils/UserPreferences.dart';
 import 'View/BookList.dart';
@@ -39,6 +41,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => BookListController()),
         ChangeNotifierProvider(create: (_) => HomePageController()),
         ChangeNotifierProvider(create: (_) => IssueController()),
+        ChangeNotifierProvider(create: (_) => RequestListController()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -50,6 +53,7 @@ class MyApp extends StatelessWidget {
           '/signUp': (context) => SignUpScreen(),
           '/home': (context) => HomePage(),
           '/BooKList': (context) => BookList(),
+          '/Request': (context) => Requestist(),
         },
       ),
     );

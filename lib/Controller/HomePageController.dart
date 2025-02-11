@@ -10,4 +10,9 @@ class HomePageController extends ChangeNotifier{
     navigatorKey.currentState?.pushNamed('/BooKList');
   }
 
+  void onOpenReList() {
+    // Navigate to Sign Up screen
+    navigatorKey.currentState?.pushNamed('/Request');
+  }
+
 }
